@@ -1,0 +1,15 @@
+{
+  "name": "roar-ai",
+  "description": "Roar AI for Claude Code: every AI model and app hosting, run from your assistant.",
+  "owner": {
+    "name": "Roar AI",
+    "url": "https://roar-ai.com"
+  },
+  "plugins": [
+    {
+      "name": "roar-ai",
+      "source": "./plugins/roar-ai",
+      "description": "Connects Claude Code to the Roar AI MCP server: deploy and manage apps, databases and domains, and use 200+ AI models, from one sign-in."
+    }
+  ]
+}

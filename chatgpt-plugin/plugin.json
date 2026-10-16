@@ -1,0 +1,96 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "roar-ai",
+  "version": "1.0.0",
+  "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
+  "author": {
+    "name": "Roar AI",
+    "url": "https://roar-ai.com"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Roar AI",
+        "shortDescription": "AI models + app hosting",
+        "longDescription": "Roar AI is an AI gateway and app host for teams, and this plugin lets ChatGPT run both for you.\n\nAI gateway. One account and one bill for 200+ frontier and open-source models. ChatGPT can create API keys for your apps, set spending limits, and show you exactly what was used and what it cost.\n\nApp hosting. Turn a GitHub repo into a live app in minutes. ChatGPT deploys it, adds a database or your own domain, sets its secrets, reads the logs when something breaks, and rolls back if a release goes wrong. No servers to manage.\n\nChatGPT can only do what your own Roar AI account is allowed to do, and every action goes through the same permission checks as the Roar AI console. A Roar AI account is required; new users can create one while connecting.",
+        "developerName": "Roar AI",
+        "category": "Developer tools",
+        "capabilities": [
+          "Deploy apps from GitHub",
+          "Check deploys, logs and fix failures",
+          "Add databases, domains and secrets",
+          "Create and limit API keys",
+          "Report AI usage and spend"
+        ],
+        "websiteURL": "https://roar-ai.com/mcp",
+        "supportURL": "https://roar-ai.com/contact-us",
+        "privacyPolicyURL": "https://roar-ai.com/privacy",
+        "termsOfServiceURL": "https://roar-ai.com/terms",
+        "defaultPrompt": [
+          "Deploy my GitHub repo and give me the live link",
+          "My last deploy failed. Find out why and fix it",
+          "What did we spend on AI this week, and on which models?"
+        ],
+        "brandColor": "#000000",
+        "brandColorDark": "#FFFFFF",
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Lists the account's hosted apps",
+              "prompt": "What apps do I have on Roar AI, and where are they live?",
+              "tools_triggered": "list_apps",
+              "expected_behavior": "Lists each app in the review account with its live URL and whether it is running."
+            },
+            {
+              "description": "Reports how an app's last deploy went",
+              "prompt": "Is my Roar AI app live? How did its last deploy go?",
+              "tools_triggered": "list_apps, get_deploy_status",
+              "expected_behavior": "Finds the app, then reports its deploy phase, whether it is running, and its URL; if the deploy failed, says why."
+            },
+            {
+              "description": "Reads an app's recent logs",
+              "prompt": "Show me the latest logs from my Roar AI app.",
+              "tools_triggered": "list_apps, get_app_logs",
+              "expected_behavior": "Returns the most recent log lines for the app and summarises anything that looks like an error."
+            },
+            {
+              "description": "Creates a spend-limited API key",
+              "prompt": "Create a Roar AI API key called reviewer-test with a $5 monthly spending limit.",
+              "tools_triggered": "create_key",
+              "expected_behavior": "Creates the key with a $5 monthly cap and returns it once, noting it will not be shown again."
+            },
+            {
+              "description": "Reports AI usage and spend",
+              "prompt": "How much have we spent on AI with Roar AI this month, and on which models?",
+              "tools_triggered": "check_usage",
+              "expected_behavior": "Reports this month's request count and spend, broken down by model."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General writing request unrelated to Roar AI",
+              "prompt": "Write a short poem about the ocean."
+            },
+            {
+              "description": "General knowledge question",
+              "prompt": "What is the capital of Australia?"
+            },
+            {
+              "description": "Personal planning unrelated to apps or AI spend",
+              "prompt": "Help me plan a birthday party for ten people."
+            }
+          ]
+        },
+        "demo_recording_url": "",
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "First release: manage Roar AI apps, deploys, databases, domains, API keys and AI spend from ChatGPT."
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "roar": {
+      "type": "http",
+      "url": "https://cloud.roar-ai.com/mcp"
+    }
+  }
+}

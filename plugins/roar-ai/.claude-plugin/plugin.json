@@ -1,0 +1,13 @@
+{
+  "name": "roar-ai",
+  "version": "1.0.0",
+  "description": "Connects Claude Code to the Roar AI MCP server: deploy and manage apps, databases and domains, and use 200+ AI models, from one sign-in.",
+  "author": {
+    "name": "Roar AI",
+    "url": "https://roar-ai.com"
+  },
+  "homepage": "https://roar-ai.com/docs/mcp",
+  "repository": "https://github.com/Roar-AI-Labs/roar-ai-mcp",
+  "license": "MIT",
+  "keywords": ["mcp", "ai-gateway", "app-hosting", "deploy", "llm"]
+}
