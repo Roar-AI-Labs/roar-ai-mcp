@@ -61,7 +61,7 @@
               "description": "Creates a spend-limited API key",
               "prompt": "Create a Roar AI API key called reviewer-test with a $5 monthly spending limit.",
               "tools_triggered": "create_key",
-              "expected_behavior": "Creates the key with a $5 monthly cap and returns it once, noting it will not be shown again."
+              "expected_behavior": "Creates the key with a $5 monthly cap. The key itself is never shown in the chat: the reply gives a one-time setup code (works once, expires in 15 minutes) and explains that a coding agent redeems it to save the key in the project's .env."
             },
             {
               "description": "Reports AI usage and spend",
