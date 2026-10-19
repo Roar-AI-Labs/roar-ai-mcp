@@ -14,10 +14,10 @@ For maintainers. Every listing points at the same hosted server, `https://cloud.
 Three things the review needs that are not in the ZIP:
 
 1. **Domain verification.** The portal shows a token. Roar AI serves it at `https://cloud.roar-ai.com/.well-known/openai-apps-challenge` once an operator saves it in the Roar AI operator console. Then press Verify in the portal.
-2. **A reviewer account** in the portal's *Review details* form. It must sign in without email codes or MFA, so it is a password account, in a demo workspace with credit and at least one live app, because the review cases list apps, read logs and report spend.
+2. **A reviewer account** in the portal's *Review details* form. OpenAI gives the reviewer's own address (choose *Magic link or email code*): make that address the owner of a demo workspace with credit and at least one live app, because the review cases list apps, read logs and report spend. They sign in with the emailed 6-digit code, so no password and no registration. The demo workspace is **Roar AI Review Demo**; keep its app and credit in place for later reviews.
 3. **A demo video** of the five positive review cases, linked from `extensions.com.openai.review.demo_recording_url` in `plugin.json`.
 
-The positive review cases name real tools (`list_apps`, `get_deploy_status`, `get_app_logs`, `create_key`, `check_usage`). If one is renamed on the server, update the case here.
+The positive review cases name real tools (`list_apps`, `get_deploy_status`, `get_app_logs`, `create_key`, `check_usage`). If one is renamed on the server, update the case here. `create_key` returns a one-time setup code, never the key itself (OpenAI's guidelines forbid a plugin to handle API keys), and its case says so.
 
 ## Official MCP Registry
 
