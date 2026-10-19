@@ -14,7 +14,7 @@
         "shortDescription": "AI models + app hosting",
         "longDescription": "Roar AI is an AI gateway and app host for teams, and this plugin lets ChatGPT run both for you.\n\nAI gateway. One account and one bill for 200+ frontier and open-source models. ChatGPT can create API keys for your apps, set spending limits, and show you exactly what was used and what it cost.\n\nApp hosting. Turn a GitHub repo into a live app in minutes. ChatGPT deploys it, adds a database or your own domain, sets its secrets, reads the logs when something breaks, and rolls back if a release goes wrong. No servers to manage.\n\nChatGPT can only do what your own Roar AI account is allowed to do, and every action goes through the same permission checks as the Roar AI console. A Roar AI account is required; new users can create one while connecting.",
         "developerName": "Roar AI",
-        "category": "Developer tools",
+        "category": "Developer Tools",
         "capabilities": [
           "Deploy apps from GitHub",
           "Check deploys, logs and fix failures",
