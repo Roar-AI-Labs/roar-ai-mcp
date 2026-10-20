@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.roar-ai/mcp",
   "title": "Roar AI",
-  "description": "AI gateway and app hosting: deploy apps, add databases and domains, and call 200+ AI models.",
-  "version": "1.0.0",
+  "description": "Deploy the apps you build with AI, with databases and domains, and call 200+ AI models on one key.",
+  "version": "1.0.1",
   "websiteUrl": "https://roar-ai.com/docs/mcp",
   "repository": {
     "url": "https://github.com/Roar-AI-Labs/roar-ai-mcp",
