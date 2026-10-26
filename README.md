@@ -19,6 +19,7 @@
 
 <p align="center">
   <a href="https://claude.ai/directory/connectors/roar-ai"><img alt="Listed in Claude's connector directory" src="https://img.shields.io/badge/Claude-connector%20directory-D97757"></a>
+  <a href="https://chatgpt.com/plugins/plugin_asdk_app_6ad10cf9ecf481919f62293a1426f6b5"><img alt="Listed in ChatGPT's plugin directory" src="https://img.shields.io/badge/ChatGPT-plugin%20directory-10A37F"></a>
   <a href="https://cursor.com/en/install-mcp?name=roar&config=eyJ1cmwiOiJodHRwczovL2Nsb3VkLnJvYXItYWkuY29tL21jcCJ9"><img alt="Add to Cursor" src="https://img.shields.io/badge/Cursor-Add%20to%20Cursor-000000"></a>
   <a href="https://insiders.vscode.dev/redirect/mcp/install?name=roar&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fcloud.roar-ai.com%2Fmcp%22%7D"><img alt="Add to VS Code" src="https://img.shields.io/badge/VS%20Code-Add%20to%20VS%20Code-0098FF"></a>
   <img alt="Remote MCP · Streamable HTTP · OAuth" src="https://img.shields.io/badge/MCP-remote%20%C2%B7%20OAuth-555">
@@ -88,9 +89,11 @@ The Claude desktop app does not include the `claude` command. Claude Code is ins
 <details>
 <summary><b>ChatGPT</b></summary>
 
-Go to **Settings → Connectors → Advanced**, turn on **Developer mode**, then press **Create**. Name it *Roar AI*, set authentication to **OAuth**, and paste `https://cloud.roar-ai.com/mcp`. ChatGPT then opens the Roar AI sign-in page for you to approve.
+**Easiest:** open [Roar AI in ChatGPT's plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ad10cf9ecf481919f62293a1426f6b5) and click **Install plugin**.
 
-A one-click listing in ChatGPT's plugin directory is on its way. Its package lives in [`chatgpt-plugin/`](chatgpt-plugin).
+**Or add it yourself:** go to **Settings → Connectors → Advanced**, turn on **Developer mode**, then press **Create**. Name it *Roar AI*, set authentication to **OAuth**, and paste `https://cloud.roar-ai.com/mcp`. ChatGPT then opens the Roar AI sign-in page for you to approve.
+
+The listing's package lives in [`chatgpt-plugin/`](chatgpt-plugin).
 </details>
 
 <details>
@@ -204,7 +207,7 @@ Start at [roar-ai.com](https://roar-ai.com), or read the [quickstart](https://ro
 | Path | What it is |
 |---|---|
 | [`.claude-plugin/`](.claude-plugin) and [`plugins/roar-ai/`](plugins/roar-ai) | A Claude Code plugin marketplace with one plugin, the Roar AI MCP server |
-| [`chatgpt-plugin/`](chatgpt-plugin) | The package for OpenAI's ChatGPT and Codex plugin directory |
+| [`chatgpt-plugin/`](chatgpt-plugin) | The package for [our listing](https://chatgpt.com/plugins/plugin_asdk_app_6ad10cf9ecf481919f62293a1426f6b5) in ChatGPT's plugin directory |
 | [`server.json`](server.json) | The listing for the [official MCP Registry](https://registry.modelcontextprotocol.io) |
 | [`docs/publishing.md`](docs/publishing.md) | How each listing is updated (for maintainers) |
 
