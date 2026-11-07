@@ -36,8 +36,8 @@ Then ask: "What would you like to do first?"
 
 When they pick one, do it with the Roar AI tools.
 
-- **Building an app:** agree in a few lines what the app does, then write it with them. Give it AI with `create_key`, using a monthly spending limit the person agrees to. The key is never shown in the chat: the reply holds a one-time setup code, which expires after a short time. Put the app online with `deploy_app` and share the live link.
-- **If you cannot put the code in a GitHub repository yourself**, say so plainly: `deploy_app` needs one. Suggest finishing the build in a coding assistant with Roar AI connected, such as Codex, Claude Code or Cursor, and give them the prompt to paste there. It can redeem the setup code to save the key.
+- **Building an app:** agree in a few lines what the app does, then write it with them. The app reads its Roar AI key from `ROAR_API_KEY` and the AI endpoint from `ROAR_BASE_URL`, which is OpenAI-compatible. Roar AI gives every deployed app its own key, so never put a key in the code or the chat. Put the app online with `deploy_app` and share the live link.
+- **The code goes on GitHub first.** `deploy_app` deploys from a GitHub repository. If you cannot create one yourself, help the person create one on github.com and upload the app's files to it. Check `get_github_status`: if GitHub is not connected to Roar AI yet, an owner connects it once in the Roar AI console.
 - **Deploying an app they already have:** ask which GitHub repository it is in, then deploy it and share the live link.
 
 ## Keep it simple

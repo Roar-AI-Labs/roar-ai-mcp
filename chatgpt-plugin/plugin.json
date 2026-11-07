@@ -49,8 +49,8 @@
             {
               "description": "Starts building an app on Roar AI",
               "prompt": "Build a customer support chat for my website on Roar AI",
-              "tools_triggered": "create_key",
-              "expected_behavior": "Plans the chat with the person, then creates a Roar AI key for it with a spending limit they agree to. The key itself is never shown in the chat: the reply gives a one-time setup code. Putting the app online needs its code in a GitHub repo, so if the assistant cannot create one it says so and suggests finishing the build in a coding assistant with Roar AI connected, such as Codex, Claude Code or Cursor, which redeems the code to save the key."
+              "tools_triggered": "get_github_status",
+              "expected_behavior": "Plans the chat with the person and writes it to read its Roar AI key from the environment, so no key appears in the code or the chat. Putting the app online needs its code in a GitHub repository, so the assistant helps the person create one on github.com and upload the files, checks with get_github_status that GitHub is connected to Roar AI, and then deploys it with deploy_app."
             },
             {
               "description": "Lists the account's hosted apps",
