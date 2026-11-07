@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -27,9 +27,9 @@
         "privacyPolicyURL": "https://roar-ai.com/privacy",
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
+          "Show my account and what you can do for me",
           "Deploy my GitHub repo and give me the live link",
-          "My last deploy failed. Find out why and fix it",
-          "What did we spend on AI this week, and on which models?"
+          "Which AI models can I use, and what do they cost?"
         ],
         "brandColor": "#000000",
         "brandColorDark": "#FFFFFF",
