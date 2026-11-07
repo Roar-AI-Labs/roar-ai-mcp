@@ -27,18 +27,31 @@
         "privacyPolicyURL": "https://roar-ai.com/privacy",
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
-          "Show my account and what you can do for me",
-          "Deploy my GitHub repo and give me the live link",
-          "Which AI models can I use, and what do they cost?"
+          "Set up my Roar AI account",
+          "Add an AI chat assistant to my website",
+          "Deploy my app and give me the live link"
         ],
         "brandColor": "#000000",
         "brandColorDark": "#FFFFFF",
         "composerIcon": "./assets/logo.png",
         "logo": "./assets/logo.png"
       },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
       "review": {
         "test_cases": {
           "positive": [
+            {
+              "description": "Sets up the account, then shows what Roar AI can do",
+              "prompt": "Set up my Roar AI account",
+              "tools_triggered": "set_up_account",
+              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists what Roar AI can do (give an app AI, put an app online) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
+            },
+            {
+              "description": "Gives an app AI through Roar AI",
+              "prompt": "Add an AI chat assistant to my website",
+              "tools_triggered": "create_key",
+              "expected_behavior": "Creates a Roar AI key for the website with a spending limit. The key itself is never shown in the chat: the reply gives a one-time setup code and explains that the person's coding assistant (such as Codex, Claude Code or Cursor) redeems it to save the key, then adds the chat code to the site."
+            },
             {
               "description": "Lists the account's hosted apps",
               "prompt": "What apps do I have on Roar AI, and where are they live?",
