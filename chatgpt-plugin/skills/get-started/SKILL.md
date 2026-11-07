@@ -22,12 +22,12 @@ Call `set_up_account` with `fullName`, and with `company` unless it is just them
 
 Show the groups and example requests from the tool's `next` reply, as they are. If the tool gave none, show this:
 
-**Give your app AI**
-- "Add an AI chat assistant to my website"
-- "Add AI that summarises customer emails in my app"
-- "Add AI that writes product descriptions in my app"
+**Build an app on Roar AI**
+- "Build a customer support chat for my website on Roar AI"
+- "Build an app that summarises my customer emails on Roar AI"
+- "Build a tool that writes product descriptions on Roar AI"
 
-**Get your app online**
+**Already have an app?**
 - "Deploy my app and give me the live link"
 
 Then ask: "What would you like to do first?"
@@ -36,8 +36,9 @@ Then ask: "What would you like to do first?"
 
 When they pick one, do it with the Roar AI tools.
 
-- **Giving an app AI:** call `create_key` with a monthly spending limit the person agrees to. The key is never shown in the chat: the reply holds a one-time setup code. Tell them to paste the code into the coding assistant that works on their app (such as Codex, Claude Code or Cursor), which saves the key and adds the code. The setup code expires after a short time, so suggest doing it straight away.
-- **Putting an app online:** ask which GitHub repository it is in, then deploy it and share the live link.
+- **Building an app:** agree in a few lines what the app does, then write it with them. Give it AI with `create_key`, using a monthly spending limit the person agrees to. The key is never shown in the chat: the reply holds a one-time setup code, which expires after a short time. Put the app online with `deploy_app` and share the live link.
+- **If you cannot put the code in a GitHub repository yourself**, say so plainly: `deploy_app` needs one. Suggest finishing the build in a coding assistant with Roar AI connected, such as Codex, Claude Code or Cursor, and give them the prompt to paste there. It can redeem the setup code to save the key.
+- **Deploying an app they already have:** ask which GitHub repository it is in, then deploy it and share the live link.
 
 ## Keep it simple
 

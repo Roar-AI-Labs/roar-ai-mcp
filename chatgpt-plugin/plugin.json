@@ -28,7 +28,7 @@
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
           "Set up my Roar AI account",
-          "Add an AI chat assistant to my website",
+          "Build a customer support chat for my website on Roar AI",
           "Deploy my app and give me the live link"
         ],
         "brandColor": "#000000",
@@ -44,13 +44,13 @@
               "description": "Sets up the account, then shows what Roar AI can do",
               "prompt": "Set up my Roar AI account",
               "tools_triggered": "set_up_account",
-              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists what Roar AI can do (give an app AI, put an app online) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
+              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists what Roar AI can do (build an app on Roar AI, or deploy one they already have) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
             },
             {
-              "description": "Gives an app AI through Roar AI",
-              "prompt": "Add an AI chat assistant to my website",
+              "description": "Starts building an app on Roar AI",
+              "prompt": "Build a customer support chat for my website on Roar AI",
               "tools_triggered": "create_key",
-              "expected_behavior": "Creates a Roar AI key for the website with a spending limit. The key itself is never shown in the chat: the reply gives a one-time setup code and explains that the person's coding assistant (such as Codex, Claude Code or Cursor) redeems it to save the key, then adds the chat code to the site."
+              "expected_behavior": "Plans the chat with the person, then creates a Roar AI key for it with a spending limit they agree to. The key itself is never shown in the chat: the reply gives a one-time setup code. Putting the app online needs its code in a GitHub repo, so if the assistant cannot create one it says so and suggests finishing the build in a coding assistant with Roar AI connected, such as Codex, Claude Code or Cursor, which redeems the code to save the key."
             },
             {
               "description": "Lists the account's hosted apps",
