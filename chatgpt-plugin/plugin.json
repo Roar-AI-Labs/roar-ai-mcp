@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -27,18 +27,31 @@
         "privacyPolicyURL": "https://roar-ai.com/privacy",
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
-          "Deploy my GitHub repo and give me the live link",
-          "My last deploy failed. Find out why and fix it",
-          "What did we spend on AI this week, and on which models?"
+          "Set up my Roar AI account",
+          "Build a customer support chat for my website on Roar AI",
+          "Deploy my app and give me the live link"
         ],
         "brandColor": "#000000",
         "brandColorDark": "#FFFFFF",
         "composerIcon": "./assets/logo.png",
         "logo": "./assets/logo.png"
       },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
       "review": {
         "test_cases": {
           "positive": [
+            {
+              "description": "Sets up the account, then shows what Roar AI can do",
+              "prompt": "Set up my Roar AI account",
+              "tools_triggered": "set_up_account",
+              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists what Roar AI can do (build an app on Roar AI, or deploy one they already have) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
+            },
+            {
+              "description": "Starts building an app on Roar AI",
+              "prompt": "Build a customer support chat for my website on Roar AI",
+              "tools_triggered": "get_github_status",
+              "expected_behavior": "Plans the chat with the person and writes it to read its Roar AI key from the environment, so no key appears in the code or the chat. Putting the app online needs its code in a GitHub repository, so the assistant helps the person create one on github.com and upload the files, checks with get_github_status that GitHub is connected to Roar AI, and then deploys it with deploy_app."
+            },
             {
               "description": "Lists the account's hosted apps",
               "prompt": "What apps do I have on Roar AI, and where are they live?",
