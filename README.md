@@ -181,7 +181,7 @@ The server exposes around 90 tools. Your assistant picks the right one from what
 |---|---|
 | **AI models** | List the [200+ models](https://roar-ai.com/models) you can use, send a message to any of them, generate an image. Calls are billed to your Roar AI account under a monthly cap you set. |
 | **API keys and spend** | Create, limit, rotate and revoke API keys, check usage and budgets, and look up a single request when you need to debug it. |
-| **App hosting** | Deploy from GitHub or any git repo, watch a deploy until it finishes, read build and runtime logs, fix a failed deploy, roll back, stop and start. |
+| **App hosting** | Deploy from the files your assistant writes, a folder on your computer, or a GitHub repo, with no GitHub needed for the first two. Watch a deploy until it finishes, read build and runtime logs, fix a failed deploy, roll back, stop and start. |
 | **Databases and storage** | Add Postgres to an app, check its health, read its schema, run a query, and add file storage. |
 | **Domains** | Add a custom domain or a free one, check its DNS, and choose the primary address. |
 | **Config and jobs** | Set environment variables, schedule cron jobs and run them, and manage webhooks. |
