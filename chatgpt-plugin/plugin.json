@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -12,7 +12,7 @@
       "interface": {
         "displayName": "Roar AI",
         "shortDescription": "AI models + app hosting",
-        "longDescription": "Roar AI is an AI gateway and app host for teams, and this plugin lets ChatGPT run both for you.\n\nAI gateway. One account and one bill for 200+ frontier and open-source models. ChatGPT can create API keys for your apps, set spending limits, and show you exactly what was used and what it cost.\n\nApp hosting. Put an app online in minutes, straight from the files ChatGPT writes or from a GitHub repo. ChatGPT deploys it, adds a database or your own domain, sets its secrets, reads the logs when something breaks, and rolls back if a release goes wrong. No servers to manage.\n\nChatGPT can only do what your own Roar AI account is allowed to do, and every action goes through the same permission checks as the Roar AI console. A Roar AI account is required; new users can create one while connecting.",
+        "longDescription": "Roar AI is an AI gateway and app host for teams, and this plugin lets ChatGPT run both for you.\n\nAI gateway. One account and one bill for 200+ frontier and open-source models. ChatGPT can create API keys for your apps, set spending limits, and show you exactly what was used and what it cost.\n\nApp hosting. Put an app online straight from the files ChatGPT writes, or from a GitHub repo. ChatGPT deploys it, adds a database or your own domain, sets its secrets, reads the logs when something breaks, and rolls back if a release goes wrong. No servers to manage.\n\nChatGPT can only do what your own Roar AI account is allowed to do, and every action goes through the same permission checks as the Roar AI console. A Roar AI account is required; new users can create one while connecting.",
         "developerName": "Roar AI",
         "category": "Developer Tools",
         "capabilities": [
@@ -27,9 +27,9 @@
         "privacyPolicyURL": "https://roar-ai.com/privacy",
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
-          "Set up my Roar AI account",
-          "Build a customer support chat for my website on Roar AI",
-          "Deploy my app and give me the live link"
+          "Make a website for my business with Roar AI",
+          "Build an AI chatbot for my business with Roar AI",
+          "Put my app online with Roar AI"
         ],
         "brandColor": "#000000",
         "brandColorDark": "#FFFFFF",
@@ -44,13 +44,19 @@
               "description": "Sets up the account, then shows what Roar AI can do",
               "prompt": "Set up my Roar AI account",
               "tools_triggered": "set_up_account",
-              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists what Roar AI can do (build an app on Roar AI, or deploy one they already have) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
+              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists first jobs (a website for their business, an AI chatbot, a simple tool for their team, or putting an app they have online) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
             },
             {
-              "description": "Starts building an app on Roar AI",
-              "prompt": "Build a customer support chat for my website on Roar AI",
+              "description": "Builds a website and puts it online",
+              "prompt": "Make a website for my business with Roar AI",
               "tools_triggered": "deploy_app_from_files, get_deploy_status",
-              "expected_behavior": "Plans the chat with the person and writes it to read its Roar AI key from the environment, so no key appears in the code or the chat. Puts it online with deploy_app_from_files, sending the files written in the chat, with no GitHub repository needed, and shares the live link from get_deploy_status."
+              "expected_behavior": "Asks for the business's name and what it does, writes a one-page website, puts it online with deploy_app_from_files, sending the files written in the chat with no GitHub repository needed, and shares the live link from get_deploy_status."
+            },
+            {
+              "description": "Builds an AI chatbot that uses Roar AI's models",
+              "prompt": "Build an AI chatbot for my business with Roar AI",
+              "tools_triggered": "deploy_app_from_files, get_deploy_status",
+              "expected_behavior": "Asks what the business does and what people usually ask, writes a chatbot that reads its Roar AI key from ROAR_API_KEY and its endpoint from ROAR_BASE_URL, so no key appears in the code or the chat, puts it online with deploy_app_from_files and shares the live link from get_deploy_status."
             },
             {
               "description": "Lists the account's hosted apps",
@@ -102,7 +108,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Deploy an app straight from the files ChatGPT writes, with no GitHub repository needed. Apps from GitHub deploy as before."
+        "release_notes": "New starter prompts: a website for your business, an AI chatbot for your business, or putting an app you already have online. Each ends with a live link, with no GitHub repository needed."
       }
     }
   }

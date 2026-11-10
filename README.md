@@ -39,7 +39,7 @@ Connect once and sign in with your Roar AI account. There is nothing to install,
 
 > "Set up my Roar AI account."
 >
-> "Build a customer support chat for my website on Roar AI."
+> "Build an AI chatbot for my business with Roar AI."
 >
 > "Deploy my app and give me the live link."
 >
