@@ -213,6 +213,7 @@ Start at [roar-ai.com](https://roar-ai.com), or read the [quickstart](https://ro
 | [`.claude-plugin/`](.claude-plugin) and [`plugins/roar-ai/`](plugins/roar-ai) | A Claude Code plugin marketplace with one plugin, the Roar AI MCP server |
 | [`chatgpt-plugin/`](chatgpt-plugin) | The package for [our listing](https://chatgpt.com/plugins/plugin_asdk_app_6ad10cf9ecf481919f62293a1426f6b5) in ChatGPT's plugin directory |
 | [`server.json`](server.json) | The listing for the [official MCP Registry](https://registry.modelcontextprotocol.io) |
+| [`CHANGELOG.md`](CHANGELOG.md) | What changed in each release |
 | [`docs/publishing.md`](docs/publishing.md) | How each listing is updated (for maintainers) |
 
 The server itself is hosted by Roar AI, so there is no server code here, only the files that tell each assistant where to find it.
