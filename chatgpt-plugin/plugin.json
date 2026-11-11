@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -44,7 +44,7 @@
               "description": "Sets up the account, then shows what Roar AI can do",
               "prompt": "Set up my Roar AI account",
               "tools_triggered": "set_up_account",
-              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and lists first jobs (a website for their business, an AI chatbot, a simple tool for their team, or putting an app they have online) before asking what to do first. If the account is already set up, as the review account is, it says so and shows the same list."
+              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and offers to start on a one-page website for their business, asking only what it does. It also lists the other first jobs (an AI chatbot, a simple tool for their team, or putting an app they have online) for anyone who wants something else. If the account is already set up, as the review account is, it says so and makes the same offer."
             },
             {
               "description": "Builds a website and puts it online",
