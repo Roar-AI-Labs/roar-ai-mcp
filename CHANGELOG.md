@@ -2,6 +2,11 @@
 
 Changes to the listings and plugins in this repository. The Roar AI MCP server itself is hosted at `https://cloud.roar-ai.com/mcp`, so new tools reach every assistant without a release here.
 
+## 2026-11-11 · ChatGPT plugin 1.0.4
+
+- After setting up your account, ChatGPT offers to start on a website for your business and asks only what it does. Before, it showed a list and asked what you wanted to do first.
+- The other first jobs are still listed, so you can pick something else.
+
 ## 2026-11-10 · ChatGPT plugin 1.0.3
 
 - New starter prompts:

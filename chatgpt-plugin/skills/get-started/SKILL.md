@@ -18,23 +18,25 @@ Call `set_up_account` with `fullName`, and with `company` unless it is just them
 - If it succeeds, confirm in one line: "You're set up, <first name>."
 - If it says the account is already set up, say so in one line and carry on. Do not try again or try another way to rename it.
 
-## 3. Show what they can do
+## 3. Offer a first job
 
-Show the groups and example requests from the tool's `next` reply, as they are. If the tool gave none, show this:
+Offer to start on one thing, and ask only what it needs. Say the question from the tool's `next.ask` reply, using the business name they just gave you. For example:
 
-**Build something on Roar AI**
-- "Make a website for my business"
+"Shall I start with a one-page website for Lanka Bakes? Tell me what it does, and I'll build it and put it online."
+
+If it is just them, offer a website for them or their project instead.
+
+Under it, in a line or two, list the other example requests from the tool's `next` reply, so they can pick something else. If the tool gave none, list these:
+
 - "Build an AI chatbot for my business"
 - "Build a simple tool for my team"
-
-**Already have an app?**
 - "Put my app online"
 
-Then ask: "What would you like to do first?"
+Ask nothing else until they answer. Do not ask "What would you like to do first?": one clear offer is easier to say yes to than a list.
 
 ## 4. Do the first task
 
-When they pick one, do it with the Roar AI tools.
+If they say yes, or simply tell you what their business does, build the website. If they pick something else, do that. Use the Roar AI tools.
 
 - **Building an app:** ask only what the job needs (for a website, the business's name and what it does; for a chatbot, what the business does and what people usually ask), agree in a few lines what the app does, then write it with them. Keep a first app small, so it goes live in this chat. The app reads its Roar AI key from `ROAR_API_KEY` and the AI endpoint from `ROAR_BASE_URL`, which is OpenAI-compatible. Roar AI gives every deployed app its own key, so never put a key in the code or the chat. Put the app online with `deploy_app_from_files`, which takes the files you wrote straight from this chat, so no GitHub repository is needed. Share the live link from `get_deploy_status`, and pass on what its `nextStep` says the app can have next, in a line. When they ask for a change later, send only the files that changed with `update_app_files`.
 - **Deploying an app they already have:** ask where it is. If it is a folder on their computer, the simplest way is to drop it in the Roar AI console (New application › From your computer); a small app they attach here you can send with `deploy_app_from_files`. If it is in a GitHub repository connected to Roar AI, deploy it with `deploy_app`. Then share the live link.
