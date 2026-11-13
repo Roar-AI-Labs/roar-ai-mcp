@@ -5,7 +5,7 @@ Changes to the listings and plugins in this repository. The Roar AI MCP server i
 ## 2026-11-13 · ChatGPT plugin 1.0.5
 
 - ChatGPT starts by saying what Roar AI can do and asking what you want to build. There is no account setup step first: it saves your business name from your answer.
-- New starter prompt: "What can I do with Roar AI?"
+- New starter prompt: "What can I do with Roar AI?" It takes the place of "Put my app online with Roar AI", because the directory allows three. ChatGPT still offers to put an app you already have online.
 - ChatGPT can read the files of an app that is already online and change them, so it no longer asks for a GitHub repository or a ZIP file.
 - You can ask for a monthly limit on what an app spends on AI.
 - A new skill covers building an app, changing one, giving it AI and limiting its spend.
