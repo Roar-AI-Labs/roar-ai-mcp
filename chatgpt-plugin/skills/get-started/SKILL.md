@@ -1,48 +1,42 @@
 ---
 name: get-started
-description: Set up a new Roar AI account and show what Roar AI can do. Use when the person sets up the Roar AI plugin, asks to set up their Roar AI account, or asks how to get started with Roar AI.
+description: Show what Roar AI can do and start a first job. Use when the person sets up the Roar AI plugin, asks what they can do with Roar AI, or asks how to get started.
 ---
 
 # Get started with Roar AI
 
-Help the person set up their Roar AI account in two short answers, then get them to a first result.
+Tell the person what Roar AI does in a few lines, ask one question, and get them to a first result.
 
-## 1. Ask for two names
+## 1. Find out where they are
 
-In one short message, ask for their own name and their company's name, and say that if it is just them, their name is enough. Ask nothing else. Use only what they tell you: never guess a name or take one from anywhere else.
+Call `get_started`. It returns what Roar AI is (`about`), what this account already has (`account`), what to do about the account's name (`setup`), and the question to ask (`next.ask`).
 
-## 2. Save them
+## 2. Say what it does, then ask one question
 
-Call `set_up_account` with `fullName`, and with `company` unless it is just them.
+In two or three short lines, in your own words, say what `about` says. Then ask `next.ask` as it is:
 
-- If it succeeds, confirm in one line: "You're set up, <first name>."
-- If it says the account is already set up, say so in one line and carry on. Do not try again or try another way to rename it.
+"Tell me what your business does, or what you want to build, and I'll make it and put it online. It could be a website, a booking form, a tool for your team or an AI chatbot. If you already have an app, I can put that online instead."
 
-## 3. Offer a first job
+Ask nothing else, and do not turn it into a list to pick from. Do not ask for the person's name or their company's name as a separate step.
 
-Offer to start on one thing, and ask only what it needs. Say the question from the tool's `next.ask` reply, using the business name they just gave you. For example:
+If `account.apps` is more than zero, add one line saying they can also ask you to change an app they already have.
 
-"Shall I start with a one-page website for Lanka Bakes? Tell me what it does, and I'll build it and put it online."
+## 3. Save the business name from their answer
 
-If it is just them, offer a website for them or their project instead.
+Follow `setup`. If the workspace has no name yet and the person tells you what their business is called, save it with `set_up_account` (`company`). If they are on their own and give their name, pass it as `fullName`. Use only a name they told you. If they gave no name, carry on and do not ask for one.
 
-Under it, in a line or two, list the other example requests from the tool's `next` reply, so they can pick something else. If the tool gave none, list these:
+If `set_up_account` says the account is already set up, carry on. Do not try again or try another way to rename it.
 
-- "Build an AI chatbot for my business"
-- "Build a simple tool for my team"
-- "Put my app online"
+## 4. Build what they asked for
 
-Ask nothing else until they answer. Do not ask "What would you like to do first?": one clear offer is easier to say yes to than a list.
+- If they described a business and nothing else, build a one-page website for it.
+- If they described a thing they want, build that.
+- If they already have an app, put it online.
 
-## 4. Do the first task
-
-If they say yes, or simply tell you what their business does, build the website. If they pick something else, do that. Use the Roar AI tools.
-
-- **Building an app:** ask only what the job needs (for a website, the business's name and what it does; for a chatbot, what the business does and what people usually ask), agree in a few lines what the app does, then write it with them. Keep a first app small, so it goes live in this chat. The app reads its Roar AI key from `ROAR_API_KEY` and the AI endpoint from `ROAR_BASE_URL`, which is OpenAI-compatible. Roar AI gives every deployed app its own key, so never put a key in the code or the chat. Put the app online with `deploy_app_from_files`, which takes the files you wrote straight from this chat, so no GitHub repository is needed. Share the live link from `get_deploy_status`, and pass on what its `nextStep` says the app can have next, in a line. When they ask for a change later, send only the files that changed with `update_app_files`.
-- **Deploying an app they already have:** ask where it is. If it is a folder on their computer, the simplest way is to drop it in the Roar AI console (New application › From your computer); a small app they attach here you can send with `deploy_app_from_files`. If it is in a GitHub repository connected to Roar AI, deploy it with `deploy_app`. Then share the live link.
+Keep a first app small, so it goes live in this chat, and share the live link. The `build-and-change-apps` skill has the steps.
 
 ## Keep it simple
 
 - Short messages, plain words. The person may not be a developer.
 - No prices, credit or offers.
-- While setting up, do not ask what they plan to use Roar AI for, or anything about their business, beyond the two names.
+- One question at a time, and only what the job needs.
