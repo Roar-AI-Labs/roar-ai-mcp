@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -19,7 +19,7 @@
           "Deploy apps from chat or GitHub",
           "Check deploys, logs and fix failures",
           "Add databases, domains and secrets",
-          "Create and limit API keys",
+          "Create API keys and cap an app’s AI spend",
           "Report AI usage and spend"
         ],
         "websiteURL": "https://roar-ai.com/mcp",
@@ -28,6 +28,7 @@
         "termsOfServiceURL": "https://roar-ai.com/terms",
         "defaultPrompt": [
           "Make a website for my business with Roar AI",
+          "What can I do with Roar AI?",
           "Build an AI chatbot for my business with Roar AI",
           "Put my app online with Roar AI"
         ],
@@ -41,10 +42,10 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Sets up the account, then shows what Roar AI can do",
-              "prompt": "Set up my Roar AI account",
-              "tools_triggered": "set_up_account",
-              "expected_behavior": "Asks for the person's name and company, then saves them with set_up_account and offers to start on a one-page website for their business, asking only what it does. It also lists the other first jobs (an AI chatbot, a simple tool for their team, or putting an app they have online) for anyone who wants something else. If the account is already set up, as the review account is, it says so and makes the same offer."
+              "description": "Says what Roar AI can do, then asks one question",
+              "prompt": "What can I do with Roar AI?",
+              "tools_triggered": "get_started",
+              "expected_behavior": "Calls get_started, says in two or three lines what Roar AI does, then asks one question: what the business does or what the person wants to build. It does not ask for names as a separate step and does not show a list to pick from. Once the person answers, it saves the business name with set_up_account if the account has none, and builds what they described."
             },
             {
               "description": "Builds a website and puts it online",
@@ -57,6 +58,18 @@
               "prompt": "Build an AI chatbot for my business with Roar AI",
               "tools_triggered": "deploy_app_from_files, get_deploy_status",
               "expected_behavior": "Asks what the business does and what people usually ask, writes a chatbot that reads its Roar AI key from ROAR_API_KEY and its endpoint from ROAR_BASE_URL, so no key appears in the code or the chat, puts it online with deploy_app_from_files and shares the live link from get_deploy_status."
+            },
+            {
+              "description": "Changes an app that is already online",
+              "prompt": "Change the heading on my Roar AI website to \"Open every day\".",
+              "tools_triggered": "list_apps, list_app_files, read_app_file, update_app_files, get_deploy_status",
+              "expected_behavior": "Finds the app, reads the file that holds the heading with list_app_files and read_app_file, sends only the changed file with update_app_files, and shares the live link once get_deploy_status says it is live. It does not ask for a GitHub repository or a ZIP file."
+            },
+            {
+              "description": "Limits what an app spends on AI",
+              "prompt": "Put a $3 monthly limit on what my Roar AI app spends on AI.",
+              "tools_triggered": "list_apps, set_app_ai_budget",
+              "expected_behavior": "Finds the app and sets a $3 monthly limit with set_app_ai_budget, then confirms the limit and that the app's AI calls stop when it is reached and start again the next month. It does not create a new API key."
             },
             {
               "description": "Lists the account's hosted apps",
@@ -108,7 +121,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "New starter prompts: a website for your business, an AI chatbot for your business, or putting an app you already have online. Each ends with a live link, with no GitHub repository needed."
+        "release_notes": "ChatGPT now starts by saying what Roar AI can do and asking what you want to build, with no account setup step first. It can read and change an app that is already online, and set a monthly limit on what an app spends on AI."
       }
     }
   }
