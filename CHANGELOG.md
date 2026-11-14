@@ -2,6 +2,11 @@
 
 Changes to the listings and plugins in this repository. The Roar AI MCP server itself is hosted at `https://cloud.roar-ai.com/mcp`, so new tools reach every assistant without a release here.
 
+## 2026-11-14 · ChatGPT plugin 1.0.6
+
+- ChatGPT's first question asks for your business name and what it does, so it can make you a website, or what else you would like built.
+- The get-started skill now takes the first question from Roar AI each time, so later changes to it need no new plugin version.
+
 ## 2026-11-13 · ChatGPT plugin 1.0.5
 
 - ChatGPT starts by saying what Roar AI can do and asking what you want to build. There is no account setup step first: it saves your business name from your answer.

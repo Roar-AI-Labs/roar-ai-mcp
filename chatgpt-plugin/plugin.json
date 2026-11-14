@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "roar-ai",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Run your Roar AI account from ChatGPT: deploy and manage apps, and manage the AI models, API keys and spend behind them.",
   "author": {
     "name": "Roar AI",
@@ -44,7 +44,7 @@
               "description": "Says what Roar AI can do, then asks one question",
               "prompt": "What can I do with Roar AI?",
               "tools_triggered": "get_started",
-              "expected_behavior": "Calls get_started, says in two or three lines what Roar AI does, then asks one question: what the business does or what the person wants to build. It does not ask for names as a separate step and does not show a list to pick from. Once the person answers, it saves the business name with set_up_account if the account has none, and builds what they described."
+              "expected_behavior": "Calls get_started, says in two or three lines what Roar AI does, then asks the one question get_started returns: the business name and what it does, for a website, or what else the person wants built. It does not ask for names as a separate step and does not show a list to pick from. Once the person answers, it saves the business name with set_up_account if the account has none, and builds what they described."
             },
             {
               "description": "Builds a website and puts it online",
