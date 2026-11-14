@@ -13,9 +13,7 @@ Call `get_started`. It returns what Roar AI is (`about`), what this account alre
 
 ## 2. Say what it does, then ask one question
 
-In two or three short lines, in your own words, say what `about` says. Then ask `next.ask` as it is:
-
-"Tell me what your business does, or what you want to build, and I'll make it and put it online. It could be a website, a booking form, a tool for your team or an AI chatbot. If you already have an app, I can put that online instead."
+In two or three short lines, in your own words, say what `about` says. Then ask `next.ask` exactly as `get_started` returns it. The wording can change, so always use the one in the response.
 
 Ask nothing else, and do not turn it into a list to pick from. Do not ask for the person's name or their company's name as a separate step.
 
