@@ -5,7 +5,7 @@ Changes to the listings and plugins in this repository. The Roar AI MCP server i
 ## 2026-11-18 · ChatGPT plugin 1.0.7
 
 - A website ChatGPT makes can have a small chat assistant that answers visitors' questions from your business details.
-- New starter prompt: "Build an AI tool for my business with Roar AI". It takes the place of "Build an AI chatbot for my business with Roar AI": ChatGPT asks what the tool should do for your business and builds that, with a few ideas if you are unsure.
+- New starter prompt: "Build an AI tool with Roar AI". It takes the place of "Build an AI chatbot for my business with Roar AI": ChatGPT asks what the tool should do and builds that, with a few ideas if you are unsure.
 - Add your logo or a photo to an app by attaching it in the chat. If you have no logo, ChatGPT can make one and put it in your app.
 - AI tools ChatGPT builds use a low-cost model, show replies as they are written, and work well on a phone.
 
