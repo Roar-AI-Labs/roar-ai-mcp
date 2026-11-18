@@ -9,7 +9,7 @@ Roar AI puts an app online from the files written in this chat and runs it. No G
 
 ## Build a new app
 
-1. Ask only what the job needs. For a website: what the business is called and what it does. For a chatbot: what the business does and what people usually ask.
+1. Ask only what the job needs. For a website: what the business is called and what it does. For an AI tool: what it should do, plus whatever that job needs (for a chatbot, what people usually ask).
 2. Agree in a few lines what the app does, then write it. Keep a first app small.
 3. Put it online with `deploy_app_from_files`. The answer gives the app's `appId`: keep it for every later step.
 4. Call `get_deploy_status` with `waitSeconds` until it is live, then share the link. Pass on in one line what its `nextStep` says the app can have next.
@@ -36,6 +36,19 @@ Every app on Roar AI already has its own key. The app reads it from `ROAR_API_KE
 - Do not create a key for an app hosted on Roar AI.
 - Never put a key in the code or in the chat.
 - Call the models from the app's server code, not from the browser.
+- Use a low-cost model unless the person asks for another, and stream replies as they are written.
+- Make it work well on a phone.
+
+A website can have a small chat assistant that answers visitors' questions from the business's details. Offer it once a website is live, and add it if the person wants it.
+
+## Add a picture
+
+- If the person attached a logo or photo, put it in the app with `add_app_image`. Pass the attachment itself as `image`, never as text or base64.
+- If they have no logo, `generate_image` with `saveAs` (for example `images/logo.png`) makes one and saves it in the app's files.
+
+Both save the picture without deploying it, and return an `uploadId`. Refer to the picture from the app's pages, then send the changed pages with that `uploadId`: `update_app_files` for an app that is already online, `deploy_app_from_files` for a new one.
+
+If the picture cannot be read, ask the person to attach it again from chatgpt.com or the ChatGPT desktop app.
 
 ## Limit what an app spends on AI
 

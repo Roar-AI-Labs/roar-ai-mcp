@@ -27,7 +27,8 @@ If `set_up_account` says the account is already set up, carry on. Do not try aga
 
 ## 4. Build what they asked for
 
-- If they described a business and nothing else, build a one-page website for it.
+- If they described a business and nothing else, build a one-page website for it, with a small chat assistant that answers visitors' questions from the business's details.
+- If they asked for an AI tool without saying what it should do, ask what they would like it to do. Anything that reads, writes, answers, sorts or summarises can be built. Only if they are unsure, suggest one or two ideas that fit what they told you, and build what they choose.
 - If they described a thing they want, build that.
 - If they already have an app, put it online.
 
