@@ -56,7 +56,7 @@
               "description": "Builds an AI tool that uses Roar AI's models",
               "prompt": "Build an AI tool for my business with Roar AI",
               "tools_triggered": "deploy_app_from_files, get_deploy_status",
-              "expected_behavior": "Offers a chatbot, a tool that writes product descriptions and posts, or a tool that sorts enquiries and drafts replies, and asks what the business does. It writes the chosen tool so it calls the models from its server, reading its Roar AI key from ROAR_API_KEY and its endpoint from ROAR_BASE_URL, so no key appears in the code or the chat, streams the replies, puts it online with deploy_app_from_files and shares the live link from get_deploy_status."
+              "expected_behavior": "Asks what the business does and what the tool should do for it, suggesting an idea or two only if the person is unsure. It writes the tool so it calls the models from its server, reading its Roar AI key from ROAR_API_KEY and its endpoint from ROAR_BASE_URL, so no key appears in the code or the chat, streams the replies, puts it online with deploy_app_from_files and shares the live link from get_deploy_status."
             },
             {
               "description": "Changes an app that is already online",
@@ -126,7 +126,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Websites can come with a small chat assistant that answers visitors' questions. A new starter prompt builds an AI tool for your business: a chatbot, a writer for product descriptions and posts, or a tool that sorts enquiries and drafts replies. You can add your logo or a photo by attaching it, or ask ChatGPT to make a logo."
+        "release_notes": "Websites can come with a small chat assistant that answers visitors' questions. A new starter prompt builds an AI tool for your business: tell ChatGPT what it should do, and it builds it. You can add your logo or a photo by attaching it, or ask ChatGPT to make a logo."
       }
     }
   }

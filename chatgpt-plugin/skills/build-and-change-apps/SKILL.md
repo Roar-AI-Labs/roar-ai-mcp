@@ -9,7 +9,7 @@ Roar AI puts an app online from the files written in this chat and runs it. No G
 
 ## Build a new app
 
-1. Ask only what the job needs. For a website: what the business is called and what it does. For a chatbot: what the business does and what people usually ask. For a tool that writes product descriptions and posts: what the business sells and how it should sound. For a tool that sorts enquiries: what the business does and the kinds of enquiries it gets.
+1. Ask only what the job needs. For a website: what the business is called and what it does. For an AI tool: what the business does and what the tool should do for it, plus whatever that job needs (for a chatbot, what people usually ask).
 2. Agree in a few lines what the app does, then write it. Keep a first app small.
 3. Put it online with `deploy_app_from_files`. The answer gives the app's `appId`: keep it for every later step.
 4. Call `get_deploy_status` with `waitSeconds` until it is live, then share the link. Pass on in one line what its `nextStep` says the app can have next.
